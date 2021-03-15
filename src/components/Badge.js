@@ -1,5 +1,5 @@
 import React from "react";
-import contLogo from "../images/platzi-badges.svg";
+import contLogo from "../images/badge-header.svg";
 import "./styles/Badge.css";
 
 class Badge extends React.Component {
