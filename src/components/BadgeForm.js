@@ -1,7 +1,15 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-  handleChange = (e) => {};
+  state = {
+    firstName: "Daniel",
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
   handleClick = () => {
     console.log("Me hicieron un click");
@@ -9,6 +17,8 @@ class BadgeForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Se envió el formulario.");
+    console.log(this.state);
   };
 
   render() {
@@ -24,6 +34,51 @@ class BadgeForm extends React.Component {
               className="form-control"
               type="text"
               name="firstName"
+              value={this.state.firstName}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Last Name</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="email"
+              name="email"
+              value={this.state.email}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>job Tittle</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="jobTittle"
+              value={this.state.jobTittle}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Twitter</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="twitter"
+              value={this.state.twitter}
             />
           </div>
 
