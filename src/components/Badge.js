@@ -4,7 +4,14 @@ import "./styles/Badge.css";
 
 class Badge extends React.Component {
   render() {
-    const { firstName, lastName, jobTitle, twitter, avatarUrl } = this.props;
+    const {
+      firstName,
+      lastName,
+      jobTitle,
+      twitter,
+      avatarUrl,
+      email,
+    } = this.props;
     return (
       <div className="Badge">
         <div className="Badge_header">
@@ -20,6 +27,7 @@ class Badge extends React.Component {
 
         <div className="Badge_section-info">
           <h3>{jobTitle}</h3>
+          <div>{email}</div>
           <div>@{twitter}</div>
           {/* <a href="https://twitter.com">@Daniel</a> */}
         </div>

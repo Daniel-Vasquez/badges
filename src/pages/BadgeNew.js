@@ -49,6 +49,7 @@ class BadgeNew extends React.Component {
                 lastName={this.state.form.lastName}
                 jobTitle={this.state.form.jobTitle}
                 twitter={this.state.form.twitter}
+                email={this.state.form.email}
                 avatarUrl="https://lh3.googleusercontent.com/ogw/ADGmqu9LvsmOYAeoLi256I_pt1wRV4O5103nKFEMONYJRQ=s32-c-mo"
               />
             </div>
