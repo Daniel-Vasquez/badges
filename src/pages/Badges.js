@@ -1,52 +1,47 @@
 import React from "react";
 import "../components/styles/Badges.css";
 import confLogo from "../images/badge-header.svg";
-import data from "../data.js";
+// import data from "../data.js";
 import BadgesList from "../components/BadgesList.js";
+import api from "../api.js";
 
 import { Link } from "react-router-dom";
 
 class Badges extends React.Component {
   constructor(props) {
     super(props);
-    console.log("1. constructor()");
-    // this.state = {
-    //   data,
-    // };
+
     this.state = {
-      data: [],
+      loading: true,
+      error: null,
+      data: undefined,
     };
   }
 
   componentDidMount() {
-    console.log("3. componentDidMount()");
-    this.timeoutId = setTimeout(() => {
-      this.setState({
-        data: data,
-      });
-    }, 3000);
+    this.fetchData();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log("5. componentDidUpdate()");
-    console.log({
-      prevProps: prevProps,
-      prevState: prevState,
-    });
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
 
-    console.log({
-      props: this.props,
-      state: this.state,
-    });
-  }
-
-  componentWillUnmount() {
-    console.log("6. componentWillUnmount()");
-    clearTimeout(this.timeoutId);
-  }
+    try {
+      const data = await api.badges.list();
+      this.setState({ loading: false, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
 
   render() {
-    console.log("2/4. render()");
+    if (this.state.loading === true) {
+      return "Loading...";
+    }
+
+    if (this.state.error) {
+      return `Error: ${this.state.error.message}`;
+    }
+
     return (
       <React.Fragment>
         <div className="Badges">
