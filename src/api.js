@@ -24,8 +24,8 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      // throw new Error("Not Found"); Simulando el estado de Error.
-      // return []; Simulando una respuesta sin información
+      //throw new Error("500: Server error."); // Simulando el estado de Error.
+      // return []; // Simulando una respuesta sin información
       return callApi("/badges");
     },
     create(badge) {
