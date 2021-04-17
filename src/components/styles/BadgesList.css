@@ -27,3 +27,7 @@
   height: 1.5rem;
   vertical-align: middle;
 }
+
+.BadgesListItem a {
+  width: 100%;
+}
