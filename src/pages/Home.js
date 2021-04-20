@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../components/styles/Home.css";
 
-function Home() {
+function Home(badge) {
   return (
     <React.Fragment>
-      <div class="Home">
+      <div className="Home">
         <h1>Badges Arcade.</h1>
         <Link to="/badges" className="btn btn-primary">
           Badge
