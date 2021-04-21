@@ -3,6 +3,7 @@ import "../components/styles/BadgeDetails.css";
 import confLogo from "../images/platziconf-logo.svg";
 import { Link } from "react-router-dom";
 import Badge from "../components/Badge.js";
+import ReactDOM from "react-dom";
 
 function BadgeDetails(props) {
   const infoBadge = props.badge;
@@ -49,6 +50,10 @@ function BadgeDetails(props) {
 
               <div>
                 <button className="btn btn-danger">Delete</button>
+                {ReactDOM.createPortal(
+                  <h1>Hola, realmente no estoy aquí.</h1>,
+                  document.getElementById("modal")
+                )}
               </div>
             </div>
           </div>
