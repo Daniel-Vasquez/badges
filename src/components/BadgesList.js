@@ -2,22 +2,67 @@ import React from "react";
 import "../components/styles/BadgesList.css";
 import { Link } from "react-router-dom";
 import Gravatar from "./Gravatar.js";
-class BadgesList extends React.Component {
-  render() {
-    if (this.props.badges.length === 0) {
-      return (
-        <div>
-          <h3>No hay ningún badges.</h3>
-          <Link className="btn btn-primary" to="/badges/new">
-            Crea el tuyo.
-          </Link>
-        </div>
-      );
-    }
 
+function useSearchBadges(badges) {
+  const [query, setQuery] = React.useState("");
+
+  const [filteredBadges, setFilteredBadges] = React.useState(badges);
+
+  React.useMemo(() => {
+    const result = badges.filter((badge) => {
+      return `${badge.firstName} ${badge.lastName}`
+        .toLowerCase()
+        .includes(query.toLowerCase());
+    });
+
+    setFilteredBadges(result);
+  }, [badges, query]);
+
+  return { query, setQuery, filteredBadges };
+}
+
+function BadgesList(props) {
+  const badges = props.badges;
+
+  const { query, setQuery, filteredBadges } = useSearchBadges(badges);
+
+  if (filteredBadges.length === 0) {
     return (
+      <div>
+        <div className="form-group">
+          <label>Filter Badges</label>
+          <input
+            type="text"
+            className="form-control"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+          ></input>
+        </div>
+        <h3>No hay ningún badges.</h3>
+        <Link className="btn btn-primary" to="/badges/new">
+          Crea el tuyo.
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <React.Fragment>
+      <div className="form-group">
+        <label>Filter Badges</label>
+        <input
+          type="text"
+          className="form-control"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+        ></input>
+      </div>
       <ul className="list-unstyled BadgesList">
-        {this.props.badges.map((badge) => {
+        {filteredBadges.map((badge) => {
           return (
             <li key={badge.id} className="BadgesListItem">
               <Link
@@ -45,8 +90,8 @@ class BadgesList extends React.Component {
           );
         })}
       </ul>
-    );
-  }
+    </React.Fragment>
+  );
 }
 
 export default BadgesList;
