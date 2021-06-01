@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:3001";
-// const BASE_URL = "https://platzi-badges-api.vercel.app/api"; // SERVIDOR REAL.
+// const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://platzi-badges-api.vercel.app/api"; // SERVIDOR REAL.
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
@@ -19,8 +19,8 @@ async function callApi(endpoint, options = {}) {
   const response = await fetch(url, options);
   const data = await response.json();
 
-  return data;
-  // return data.body; //SERVIDOR REAL.
+  // return data;
+  return data.body; //SERVIDOR REAL.
 }
 
 const api = {
