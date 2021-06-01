@@ -12,3 +12,24 @@
 .BadgeNew__hero img {
   width: 150px;
 }
+
+@media screen and (max-width: 768px) {
+  .row {
+    display: block;
+  }
+
+  .row .col-6 {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .Badge_section-name h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Badge_section-name h1 {
+    font-size: 1.5rem;
+  }
+}

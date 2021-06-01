@@ -1,6 +1,6 @@
 .BadgeEdit__hero {
-  display: flex;
   justify-content: center;
+  display: flex;
   width: 100%;
   padding: 2rem 0;
   background: url("../../images/stars.svg"), #1b1b25;
@@ -12,4 +12,27 @@
 .BadgeEdit__hero img {
   width: 150px;
   max-height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  div .BadgeDetails__hero {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  div .col-6 img {
+    height: 60px;
+  }
+
+  .Badge_section-info h3 {
+    font-size: 1rem;
+  }
+
+  .col {
+    text-align: center;
+  }
+
+  .row {
+    margin-bottom: 10px;
+  }
 }
