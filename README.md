@@ -10,6 +10,6 @@
 - Asynchronous
 - State management
 
-![Badges on desktop](https://github.com/Daniel-Vasquez/badges/snapshots/badgesDesk.gif)
+![Badges on desktop](https://github.com/Daniel-Vasquez/badges/blob/master/snapshots/badgesDesk.gif)
 
-![Badges on mobile](https://github.com/Daniel-Vasquez/badges/snapshots/badgesMobile.gif)
+![Badges on mobile](https://github.com/Daniel-Vasquez/badges/blob/master/snapshots/badgesMobile.gif)
