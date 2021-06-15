@@ -31,3 +31,9 @@
   background-color: #e91e63;
   padding: 0.5rem 1rem;
 }
+
+@media screen and (max-width: 450px) {
+  .Modal__container {
+    width: 90%;
+  }
+}
