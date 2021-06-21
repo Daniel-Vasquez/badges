@@ -4,14 +4,7 @@ import "./styles/Badge.css";
 import Gravatar from "./Gravatar.js";
 class Badge extends React.Component {
   render() {
-    const {
-      firstName,
-      lastName,
-      jobTitle,
-      twitter,
-      // avatarUrl Ahora es una props,
-      email,
-    } = this.props;
+    const { firstName, lastName, jobTitle, twitter, email } = this.props;
 
     return (
       <div className="Badge">
@@ -34,7 +27,6 @@ class Badge extends React.Component {
           <h3>{jobTitle}</h3>
           <div>{email}</div>
           <div>@{twitter}</div>
-          {/* <a href="https://twitter.com">@Daniel</a> */}
         </div>
 
         <div className="Badge_footer">#platziconf</div>

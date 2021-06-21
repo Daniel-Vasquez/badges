@@ -5,15 +5,15 @@ function DeleteBadgeModal(props) {
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
       <div className="DeleteBadgeModal">
-        <h1>Are You Sure?</h1>
-        <p>You are about to delete this Badge.</p>
+        <h1>¿Está seguro?</h1>
+        <p>Está a punto de eliminar esta Badge.</p>
 
         <div>
           <button onClick={props.onDeleteBadge} className="btn btn-danger mr-4">
-            Delete
+            Confirmar
           </button>
           <button onClick={props.onClose} className="btn btn-primary">
-            Cancel
+            Cancelar
           </button>
         </div>
       </div>

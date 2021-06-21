@@ -1,34 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class BadgeForm extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {}; <---  El state ya no esta en BadgeForm, si no en BadgeNew
-  // }
-
-  // handleChange = (e) => {    <--- Eliminamos el método.
-  //   this.setState({
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+    this.state = {};
+  }
 
   handleClick = () => {
     console.log("Me hicieron un click");
   };
-
-  // handleSubmit = (e) => {              <---   Ya no es un método, porque handleSubmit
-  //   e.preventDefault();                       ahora es onSubmit y viene por props del
-  //   console.log("Se envió el formulario.");   componente BadgeForm.
-  //   console.log(this.state);
-  // };
 
   render() {
     return (
       <div>
         <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
-            <label>First Name</label>
+            <label>Nombre</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -39,7 +28,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label>Last Name</label>
+            <label>Apellido</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -50,7 +39,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label>Email</label>
+            <label>Correo</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -61,7 +50,7 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <label>job Tittle</label>
+            <label>Profesión</label>
             <input
               onChange={this.props.onChange}
               className="form-control"
@@ -87,8 +76,12 @@ class BadgeForm extends React.Component {
             onClick={this.handleClick}
             className="btn btn-primary"
           >
-            Save
+            Guardar
           </button>
+
+          <Link className="btn btn-primary ml-3" to="/">
+            Regresar
+          </Link>
 
           {this.props.error && (
             <p className="text-danger">{this.props.error.message}</p>

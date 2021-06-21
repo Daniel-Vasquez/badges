@@ -30,7 +30,7 @@ function BadgesList(props) {
     return (
       <div>
         <div className="form-group">
-          <label>Filter Badges</label>
+          <label>Buscar Badge</label>
           <input
             type="text"
             className="form-control"
@@ -40,7 +40,7 @@ function BadgesList(props) {
             }}
           ></input>
         </div>
-        <h3>No hay ningún badges.</h3>
+        <h3>No hay ningún badge.</h3>
         <Link className="btn btn-primary" to="/badges/new">
           Crea el tuyo.
         </Link>
@@ -51,7 +51,7 @@ function BadgesList(props) {
   return (
     <React.Fragment>
       <div className="form-group">
-        <label>Filter Badges</label>
+        <label>Buscar Badge</label>
         <input
           type="text"
           className="form-control"
