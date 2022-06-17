@@ -1,11 +1,9 @@
 import React from "react";
-import header from "../images/platziconf-logo.svg";
+import api from "../api.js";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm.js";
-
-import "../components/styles/BadgeEdit.css";
-import api from "../api.js";
 import PageLoading from "../components/PageLoading.js";
+import "../components/styles/BadgeEdit.css";
 
 class BadgeEdit extends React.Component {
   constructor(props) {
@@ -41,12 +39,9 @@ class BadgeEdit extends React.Component {
   };
 
   handleChange = (e) => {
-    // const nextForm = this.state.form; Primera forma.
-    // nextForm[e.target.name] = e.target.value;
-
     this.setState({
       form: {
-        ...this.state.form, //Segunda forma.
+        ...this.state.form,
         [e.target.name]: e.target.value,
       },
     });
@@ -72,37 +67,31 @@ class BadgeEdit extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <div className="BadgeEdit__hero">
-          <img className="img-fluid" src={header} alt="Logo" />
-        </div>
+      <div className="container BadgeEdit__hero">
+        <div className="row">
+          <div className="col-6">
+            <Badge
+              firstName={this.state.form.firstName || "Nombre"}
+              lastName={this.state.form.lastName || "Apellido"}
+              jobTitle={this.state.form.jobTitle || "Profesión"}
+              twitter={this.state.form.twitter || "Twitter"}
+              email={this.state.form.email || "Correo"}
+              avatarUrl="https://lh3.googleusercontent.com/ogw/ADGmqu9LvsmOYAeoLi256I_pt1wRV4O5103nKFEMONYJRQ=s32-c-mo"
+            />
+          </div>
 
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <Badge
-                firstName={this.state.form.firstName || "Nombre"}
-                lastName={this.state.form.lastName || "Apellido"}
-                jobTitle={this.state.form.jobTitle || "Profesión"}
-                twitter={this.state.form.twitter || "Twitter"}
-                email={this.state.form.email || "Correo"}
-                avatarUrl="https://lh3.googleusercontent.com/ogw/ADGmqu9LvsmOYAeoLi256I_pt1wRV4O5103nKFEMONYJRQ=s32-c-mo"
-              />
-            </div>
+          <div className="col-6">
+            <h1>Editar</h1>
 
-            <div className="col-6">
-              <h1>Editar</h1>
-
-              <BadgeForm
-                onChange={this.handleChange}
-                formValues={this.state.form}
-                onSubmit={this.handleSubmit}
-                error={this.state.error}
-              />
-            </div>
+            <BadgeForm
+              onChange={this.handleChange}
+              formValues={this.state.form}
+              onSubmit={this.handleSubmit}
+              error={this.state.error}
+            />
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

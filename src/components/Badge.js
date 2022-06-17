@@ -1,7 +1,7 @@
 import React from "react";
-import contLogo from "../images/badge-header.svg";
-import "./styles/Badge.css";
 import Gravatar from "./Gravatar.js";
+import "./styles/Badge.css";
+
 class Badge extends React.Component {
   render() {
     const { firstName, lastName, jobTitle, twitter, email } = this.props;
@@ -9,7 +9,11 @@ class Badge extends React.Component {
     return (
       <div className="Badge">
         <div className="Badge_header">
-          <img src={contLogo} alt="Logo de la conferencia" />
+          {firstName ? (
+            <p className="Badge_header-text">
+              HOLA, <span>{firstName.toUpperCase()}.</span>
+            </p>
+          ) : null}
         </div>
 
         <div className="Badge_section-name">
@@ -28,8 +32,6 @@ class Badge extends React.Component {
           <div>{email}</div>
           <div>@{twitter}</div>
         </div>
-
-        <div className="Badge_footer">#platziconf</div>
       </div>
     );
   }

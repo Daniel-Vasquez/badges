@@ -1,11 +1,9 @@
 import React from "react";
-import header from "../images/platziconf-logo.svg";
+import api from "../api.js";
 import Badge from "../components/Badge";
 import BadgeForm from "../components/BadgeForm.js";
-
-import "../components/styles/BadgeNew.css";
-import api from "../api.js";
 import PageLoading from "../components/PageLoading.js";
+import "../components/styles/BadgeNew.css";
 
 class BadgeNew extends React.Component {
   constructor(props) {
@@ -25,12 +23,9 @@ class BadgeNew extends React.Component {
   }
 
   handleChange = (e) => {
-    // const nextForm = this.state.form; Primera forma.
-    // nextForm[e.target.name] = e.target.value;
-
     this.setState({
       form: {
-        ...this.state.form, //Segunda forma.
+        ...this.state.form,
         [e.target.name]: e.target.value,
       },
     });
@@ -57,16 +52,12 @@ class BadgeNew extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="BadgeNew__hero">
-          <img className="img-fluid" src={header} alt="Logo" />
-        </div>
-
-        <div className="container">
+        <div className="container BadgeNew__hero">
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName={this.state.form.firstName || "Nombre"}
-                lastName={this.state.form.lastName || "Apellido"}
+                firstName={this.state.form.firstName}
+                lastName={this.state.form.lastName}
                 jobTitle={this.state.form.jobTitle || "Profesión"}
                 twitter={this.state.form.twitter || "Twitter"}
                 email={this.state.form.email || "Correo"}
@@ -75,7 +66,7 @@ class BadgeNew extends React.Component {
             </div>
 
             <div className="col-6">
-              <h1>Nuevo Badge</h1>
+              <h1>Nuevo Usuario</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 formValues={this.state.form}

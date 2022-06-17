@@ -1,17 +1,27 @@
 import React from "react";
-import logo from "../images/logo.svg";
-import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
+import logo from "../images/users.png";
+import "./styles/Navbar.css";
 
 class Navbar extends React.Component {
   render() {
     return (
       <div className="Navbar">
-        <div className="container-fluid">
-          <Link className="Navbar__brand" to="/">
+        <div className="container-fluid Navbar__links">
+          <Link className="Navbar__brand" to="/" title="Inicio">
             <img className="Navbar__brand-logo" src={logo} alt="Logo" />
-            <span className="font-weight-light">Platzi </span>
-            <span className="font-weight-bold">Conf</span>
+          </Link>
+          <Link
+            className="Navbar__links-linkerind"
+            to={{
+              pathname:
+                "https://www.linkedin.com/in/daniel-vasquez-nepomuceno/",
+            }}
+            target="_black"
+            title="Linkerind"
+          >
+            <span className="font-weight-light">Daniel </span>
+            <span className="font-weight-bold">Vasquez</span>
           </Link>
         </div>
       </div>

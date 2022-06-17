@@ -1,7 +1,7 @@
 import React from "react";
-import "../components/styles/BadgesList.css";
 import { Link } from "react-router-dom";
 import Gravatar from "./Gravatar.js";
+import "../components/styles/BadgesList.css";
 
 function useSearchBadges(badges) {
   const [query, setQuery] = React.useState("");
@@ -51,7 +51,7 @@ function BadgesList(props) {
   return (
     <React.Fragment>
       <div className="form-group">
-        <label>Buscar Badge</label>
+        <label>Buscar Usuario</label>
         <input
           type="text"
           className="form-control"

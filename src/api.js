@@ -26,12 +26,9 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      //throw new Error("500: Server error."); // Simulando el estado de Error.
-      // return []; // Simulando una respuesta sin información
       return callApi("/badges");
     },
     create(badge) {
-      // throw new Error("500: Server error");
       return callApi(`/badges`, {
         method: "POST",
         body: JSON.stringify(badge),
@@ -46,7 +43,6 @@ const api = {
         body: JSON.stringify(updates),
       });
     },
-    // Lo hubiera llamado `delete`, pero `delete` es un keyword en JavaScript asi que no es buena idea :P
     remove(badgeId) {
       return callApi(`/badges/${badgeId}`, {
         method: "DELETE",

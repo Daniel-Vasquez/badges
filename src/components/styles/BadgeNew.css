@@ -1,16 +1,5 @@
 .BadgeNew__hero {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 2rem 0;
-  background: url("../../images/stars.svg"), #1b1b25;
-  background-repeat: repeat;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.BadgeNew__hero img {
-  width: 150px;
+  margin-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,21 +1,28 @@
 .Navbar {
   width: 100%;
   padding: 0.5rem 0;
-  background-color: #1c3643;
+  background-color: black;
 }
 
-.Navbar__brand {
-  color: #ffffff;
-
+.Navbar__links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.Navbar__brand:hover {
-  color: #ffffff;
+.Navbar__links-linkerind {
+  color: white;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.Navbar__links-linkerind:hover {
+  color: aqua;
   text-decoration: none;
 }
 
 .Navbar__brand-logo {
   margin-right: 0.5rem;
+  width: 40px;
+  filter: invert(1);
 }

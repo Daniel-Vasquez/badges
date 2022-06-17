@@ -79,8 +79,8 @@ class BadgeForm extends React.Component {
             Guardar
           </button>
 
-          <Link className="btn btn-primary ml-3" to="/">
-            Regresar
+          <Link className="btn btn-danger ml-3" to="/">
+            Cancelar
           </Link>
 
           {this.props.error && (

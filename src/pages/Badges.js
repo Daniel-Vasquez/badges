@@ -1,12 +1,10 @@
 import React from "react";
-import "../components/styles/Badges.css";
-import confLogo from "../images/badge-header.svg";
-// import data from "../data.js";
-import BadgesList from "../components/BadgesList.js";
 import api from "../api.js";
+import BadgesList from "../components/BadgesList.js";
 import PageLoading from "../components/PageLoading.js";
 import PageError from "../components/PageError.js";
 import MiniLoader from "../components/MiniLoader.js";
+import "../components/styles/Badges.css";
 
 import { Link } from "react-router-dom";
 
@@ -44,7 +42,6 @@ class Badges extends React.Component {
 
   render() {
     if (this.state.loading === true && !this.state.data) {
-      // return "Loading...";
       return <PageLoading />;
     }
 
@@ -53,34 +50,20 @@ class Badges extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <div className="Badges">
-          <div className="Badges__hero">
-            <div className="Badges__container">
-              <img
-                className="Badges_conf-logo"
-                src={confLogo}
-                alt="Conf Logo"
-              />
-            </div>
-          </div>
+      <div className="Badges__container">
+        <div className="Badges__buttons">
+          <Link to="/badges/new" className="btn btn-primary">
+            Nuevo Usuario
+          </Link>
         </div>
 
-        <div className="Badges__container">
-          <div className="Badges__buttons">
-            <Link to="/badges/new" className="btn btn-primary">
-              Nuevo Badge
-            </Link>
-          </div>
-
-          <div className="Badges__list">
-            <div className="Badges__container">
-              <BadgesList badges={this.state.data} />
-              {this.state.loading && <MiniLoader />}
-            </div>
+        <div className="Badges__list">
+          <div className="Badges__container">
+            <BadgesList badges={this.state.data} />
+            {this.state.loading && <MiniLoader />}
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

@@ -1,15 +1,26 @@
-.BadgesList ul > li {
-  margin-bottom: 1rem;
+.BadgesList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .BadgesListItem {
   background: #ffffff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
-  padding: 1rem;
+  padding: 2.5rem 1rem 1.5rem;
+  margin: 2.3rem 0;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #d2d2d2;
+}
+
+.BadgesList ul > li {
   margin-bottom: 1rem;
 }
+
 
 .BadgesListItem__avatar {
   border-radius: 50%;
@@ -17,6 +28,9 @@
   margin-right: 0.5rem;
   width: 80px;
   height: 80px;
+  position: absolute;
+  top: -50px;
+  border: 1px solid black;
 }
 
 .Twitter__name {
