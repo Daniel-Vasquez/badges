@@ -1,4 +1,5 @@
- const BASE_URL = "http://localhost:3001";
+//  const BASE_URL = "http://localhost:3001";
+ const BASE_URL = "https://badges-daniel-vasquez.vercel.app/";
 //const BASE_URL = "https://platzi-badges-api.vercel.app/api"; // SERVIDOR REAL.
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
