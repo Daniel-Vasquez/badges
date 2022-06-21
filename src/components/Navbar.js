@@ -17,7 +17,7 @@ class Navbar extends React.Component {
               pathname:
                 "https://www.linkedin.com/in/daniel-vasquez-nepomuceno/",
             }}
-            target="_black"
+            target="_blank"
             title="Linkerind"
           >
             <span className="font-weight-light">Daniel </span>
